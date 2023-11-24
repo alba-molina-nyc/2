@@ -1,0 +1,81 @@
+/* Base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar, .main-content, .right-panel {
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.sidebar {
+  flex: 1;
+  order: 1;
+}
+
+.main-content {
+  flex: 2;
+  order: 2;
+}
+
+.right-panel {
+  flex: 1;
+  order: 3;
+}
+
+/* Mobile navigation styles */
+.toggle-button {
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Hidden by default, shown in mobile view */
+}
+
+.mobile-nav {
+  height: 100%;
+  background: #333;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start off-screen */
+  width: 250px;
+  transition: transform 0.3s ease-out;
+}
+
+.mobile-nav a {
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .toggle-button {
+      display: block;
+  }
+
+  .mobile-nav.active {
+      transform: translateX(250px);
+  }
+
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar, .main-content, .right-panel {
+      order: unset;
+      flex: none;
+      width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Desktop-specific styles, if needed */
+}
