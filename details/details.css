@@ -269,5 +269,13 @@ header {
   }
 }
 
+/* middle container */
+.question-block {
+  background-color:  #363E47;
+  border: 1px solid  #444C56;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
 
 
