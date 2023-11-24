@@ -7,9 +7,11 @@
 
 /* Body Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  background-color: #24292e;
   margin: 0;
+  padding: 0;
+  color:  #ACBAC7;
   padding: 20px;
 }
 
@@ -18,15 +20,25 @@ body {
   float: left;
   padding: 10px;
   height: 300px; /* Should be removed. Only for demonstration */
+  border-style: solid;
+  border-width: 0.8px;
+  border-color:#444C56;
+  ;
 }
 
 .left, .right {
   width: 25%;
-  background-color: aqua;
+  background-color: #2D333B;
 }
 
 .middle {
   width: 50%;
+  margin: 0 auto; /* Center the column */
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #2D333B;
 }
 
 /* Mobile navigation styles */
@@ -159,6 +171,9 @@ header {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  body {
+    background-color: #24292e;
+  }
   .row {
     display: flex;
     flex-direction: column;
@@ -168,16 +183,20 @@ header {
     float: left;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
+    border-style: solid;
+    border-width: 0.8px;
+    border-color:#444C56;
   }
 
   .left, .right {
     width: 100%;
-    background-color: aqua;
+    background-color: #2D333B;
   }
 
   .middle {
     width: 100%;
     order: 1;
+    background-color: #2D333B;
   }
 
   .left {
@@ -233,6 +252,8 @@ header {
     display: block;
   }
 }
+
+/* middle container */
 
 
 
