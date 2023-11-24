@@ -34,8 +34,21 @@ body {
   font-size: 24px;
   cursor: pointer;
 }
+ /* new thisis what we need to add to the computer screen TODO*/
+ .hamburger-nav {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #24292e;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+}
+
 
 .hamburger-nav.active {
+  transform: translateX(250px);
   height: 100%;
   background: #333;
   position: fixed;
@@ -46,15 +59,15 @@ body {
   display: block;
 }
 
-.container {
-  flex-direction: column;
+.hamburger-nav a {
+  color: white;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
 }
 
-.hamburger-nav a {
-  color: black;
-  padding: 10px;
-  display: block;
-  text-decoration: none;
+.container {
+  flex-direction: column;
 }
 
 /* Header Styles */
