@@ -1,56 +1,64 @@
-
-
+// Wait for the DOM to be fully loaded before executing JavaScript
 document.addEventListener('DOMContentLoaded', function () {
-  var toggleButton = document.querySelector('.toggle-button');
-  var mobileNav = document.querySelector('.hamburger-nav');
-  var searchBox = document.getElementById('search-box');
-  var searchResults = document.getElementById('search-results');
-  var dimBackground = document.createElement('div');
+  // Select elements and create a dim background element
+  const toggleButton = document.querySelector('.toggle-button');
+  const mobileNav = document.querySelector('.hamburger-nav');
+  const searchContainer = document.querySelector('.search-container');
+  const searchBox = document.getElementById('search-box');
+  const searchResults = document.getElementById('search-results');
+  const dimBackground = document.createElement('div');
   dimBackground.classList.add('dim-background');
   document.body.appendChild(dimBackground);
 
   // Toggle mobile navigation
   toggleButton.addEventListener('click', function () {
-      mobileNav.classList.toggle('active');
-      toggleButton.classList.toggle('is-active');
+    mobileNav.classList.toggle('active');
+    toggleButton.classList.toggle('is-active');
+
+    // Toggle the search container visibility
+    searchContainer.style.display = mobileNav.classList.contains('active') ? 'none' : 'block';
   });
 
-  // TODO: searchbox not in menu when toggle menu selected/clicked in mobile
   // Search box functionality
   searchBox.addEventListener('focus', function () {
-      searchResults.classList.add('active');
-      dimBackground.classList.add('active');
+    showSearchResults();
   });
 
   searchBox.addEventListener('input', function (e) {
-      var value = e.target.value.toLowerCase();
-      console.log(value); // Log each letter typed into the console
-      searchResults.innerHTML = '<div>Searching for: ' + value + '</div>';
-      if (!value) {
-          searchResults.classList.remove('active');
-      }
+    const value = e.target.value.toLowerCase();
+    console.log(value); // Log each letter typed into the console
+    updateSearchResults(value);
   });
 
   // Clicking on the dim background will close the search results and remove the background
   dimBackground.addEventListener('click', function () {
-      searchResults.classList.remove('active');
-      dimBackground.classList.remove('active');
+    hideSearchResults();
   });
+
+  // Function to show search results and dim background
+  function showSearchResults() {
+    searchResults.classList.add('active');
+    dimBackground.classList.add('active');
+  }
+
+  // Function to hide search results and dim background
+  function hideSearchResults() {
+    searchResults.classList.remove('active');
+    dimBackground.classList.remove('active');
+  }
 
   // Function to update search results based on input
   function updateSearchResults(value) {
-      // Here you would handle searching through your data or making an API call
-      // For now, we are just updating the search results with the input value
-      searchResults.innerHTML = ''; // Clear previous results
+    searchResults.innerHTML = ''; // Clear previous results
 
-      if (value) {
-          // This is a dummy result for demonstration purposes
-          var resultItem = document.createElement('div');
-          resultItem.textContent = "Result for '" + value + "'";
-          searchResults.appendChild(resultItem);
-          searchResults.classList.add('active');
-      } else {
-          searchResults.classList.remove('active');
-      }
+    if (value) {
+      // This is a dummy result for demonstration purposes
+      const resultItem = document.createElement('div');
+      resultItem.textContent = "Result for '" + value + "'";
+      searchResults.appendChild(resultItem);
+      showSearchResults(); // Show results and dim background
+    } else {
+      hideSearchResults(); // Hide results and dim background
+    }
   }
 });

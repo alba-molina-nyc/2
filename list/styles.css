@@ -156,31 +156,30 @@ body, html {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+ 
   .toggle-button {
-      display: block;
+    display: block;
   }
-
   .hamburger-nav.active {
-      transform: translateX(250px);
+    transform: translateX(250px);
   }
-
   .container {
-      flex-direction: column;
+    flex-direction: column;
   }
-
   .sidebar, .main-content, .right-panel {
-      order: unset;
-      flex: none;
-      width: 100%;
+    order: unset;
+    flex: none;
+    width: 100%;
   }
   .search-container {
     flex: 1;
+  }
+  #search-box {
+    width: calc(100% - 40px); /* Adjust width to make room for search icon */
+  }
 }
 
-#search-box {
-    width: calc(100% - 40px); /* Adjust width to make room for search icon */
-}
-}
+
 
 
 
