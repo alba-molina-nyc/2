@@ -143,6 +143,34 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  .left, .right {
+    width: 100%;
+    background-color: aqua;
+  }
+  
+  .middle {
+    width: 100%;
+    order: 1;
+  }
+
+  .left {
+    order: 2;
+  }
+  .right {
+    order: 3;
+  }
+}
+ 
  
   .toggle-button {
     display: block;
