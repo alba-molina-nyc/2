@@ -1,4 +1,3 @@
-/* cleaned up below  */
 /* General Reset */
 * {
   margin: 0;
@@ -6,12 +5,15 @@
   box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
 }
+
+/* Column Styles */
 .column {
   float: left;
   padding: 10px;
@@ -26,14 +28,6 @@ body {
 .middle {
   width: 50%;
 }
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Add other styles as necessary */
 
 /* Mobile navigation styles */
 .toggle-button {
@@ -51,10 +45,10 @@ body {
   transition: transform 0.3s ease-out;
   display: block;
 }
+
 .container {
   flex-direction: column;
 }
-
 
 .hamburger-nav a {
   color: black;
@@ -63,12 +57,7 @@ body {
   text-decoration: none;
 }
 
-
-
-
-/* Existing styles */
-
-/* Additional styles for new elements */
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -78,15 +67,12 @@ body {
   color: #fff;
 }
 
-.logo {
-  /* Style your logo here */
-}
-/*  */
 .logo, .user-profile, .search-container {
   display: flex;
   align-items: center;
 }
 
+/* Search Styles */
 .search-container {
   position: relative;
   max-width: 300px;
@@ -132,7 +118,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 500;
   display: none;
 }
@@ -141,23 +127,24 @@ body {
   display: block;
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .row {
     display: flex;
     flex-direction: column;
   }
+
   .column {
     float: left;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
   }
-  
+
   .left, .right {
     width: 100%;
     background-color: aqua;
   }
-  
+
   .middle {
     width: 100%;
     order: 1;
@@ -166,12 +153,11 @@ body {
   .left {
     order: 2;
   }
+
   .right {
     order: 3;
   }
-}
- 
- 
+
   .toggle-button {
     display: block;
   }
@@ -183,6 +169,7 @@ body {
   .container {
     flex-direction: column;
   }
+
   .sidebar, .main-content, .right-panel {
     order: unset;
     flex: none;
@@ -196,11 +183,11 @@ body {
   #search-box {
     width: calc(100% - 40px); /* Adjust width to make room for search icon */
   }
-
 }
-@media (min-width: 769px) {  /* Desktop-specific styles, if needed */
+
+@media (min-width: 769px) {
+  /* Desktop-specific styles, if needed */
   .search-button {
-      display: none; /* Hide search button on desktop */
+    display: none; /* Hide search button on desktop */
   }
 }
-
