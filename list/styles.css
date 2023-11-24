@@ -1,46 +1,39 @@
-
-
-
-
-
-/* Base styles */
-body, html {
+/* cleaned up below  */
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
-}
-
-/* Shared box styling */
-.box {
+  background-color: #f4f4f4;
+  margin: 0;
   padding: 20px;
-  border: 1px solid #ddd;
+}
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
 }
 
-/* Layout styles */
-.container {
-  display: flex;
-  flex-wrap: wrap;
+.left, .right {
+  width: 25%;
+  background-color: aqua;
 }
 
-.sidebar, .main-content, .right-panel {
-  padding: 20px;
-  border: 1px solid #ddd;
+.middle {
+  width: 50%;
 }
 
-.sidebar {
-  flex: 1;
-  order: 1;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-
-.main-content {
-  flex: 2;
-  order: 2;
-}
-
-.right-panel {
-  flex: 1;
-  order: 3;
-}
+/* Add other styles as necessary */
 
 /* Mobile navigation styles */
 .toggle-button {
@@ -60,12 +53,6 @@ body, html {
 }
 .container {
   flex-direction: column;
-}
-
-.sidebar, .main-content, .right-panel {
-  order: unset;
-  flex: none;
-  width: 100%;
 }
 
 
@@ -160,9 +147,11 @@ body, html {
   .toggle-button {
     display: block;
   }
+
   .hamburger-nav.active {
     transform: translateX(250px);
   }
+
   .container {
     flex-direction: column;
   }
@@ -171,18 +160,16 @@ body, html {
     flex: none;
     width: 100%;
   }
+
   .search-container {
     flex: 1;
   }
+
   #search-box {
     width: calc(100% - 40px); /* Adjust width to make room for search icon */
   }
+
 }
-
-
-
-
-
 @media (min-width: 769px) {  /* Desktop-specific styles, if needed */
   .search-button {
       display: none; /* Hide search button on desktop */
