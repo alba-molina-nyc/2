@@ -1,22 +1,28 @@
 <html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Webpage Layout</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage Layout</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
+
 <body>
   <header>
-    <button id="toggle-button" class="toggle-button">☰</button>
+   
+    <button id="toggle-button" class="toggle-button"> <i class="fa-solid fa-bars"></i></button>
+    <!-- TODO: hamburger needs to be off when starting and not start / not show when on mobile mode  -->
     <nav class="hamburger-nav">
       <!-- Mobile navigation content goes here -->
-      <a href="#">Home</a>
-      <a href="#">Issues</a>
+      <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#"><i class="fa-solid fa-bug"></i>Issues</a>
       <!-- Add other links as needed -->
     </nav>
-  
-    <div class="logo">Logo</div>
+
+    <div class="logo"><i class="fa-brands fa-reddit"></i></div>
     <!-- Search form is placed here and remains in the header -->
     <div class="search-container">
       <input type="search" id="search-box" placeholder="Type to search...">
@@ -24,11 +30,13 @@
     </div>
     <button class="search-button">🔍</button>
     <div class="user-profile">
-      <button class="notification-button">🔔</button>
-      <img class="user-image" src="https://i.redd.it/snoovatar/avatars/a37d5c6d-26d8-4f49-aef0-13a636306ec1.png" alt="User">
+      <i class="fa-solid fa-message"></i>
+      <i class="fa-solid fa-bell"></i>
+      <img class="user-image" src="https://i.redd.it/snoovatar/avatars/a37d5c6d-26d8-4f49-aef0-13a636306ec1.png"
+        alt="User">
     </div>
   </header>
-  
+
   <div class="row">
     <div class="column left">
       <h2>Column 1</h2>
@@ -42,10 +50,11 @@
       <h2>Column 2</h2>
       <p>Some text..</p>
     </div>
-  
+
 
   </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
