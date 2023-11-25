@@ -481,3 +481,60 @@ header {
 }
 
 
+.comment {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.comment-content {
+  flex-grow: 1;
+}
+
+.comment-header {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.comment-username {
+  color: #0079d3;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.comment-username:hover {
+  text-decoration: underline;
+}
+
+.comment-points {
+  margin-right: 4px;
+}
+
+.comment-time {
+  color: #555;
+}
+
+.comment-body p {
+  margin-top: 4px;
+}
+
+.reply-button {
+  background-color: transparent;
+  border: none;
+  color: #0079d3;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+.reply-button:hover {
+  text-decoration: underline;
+}

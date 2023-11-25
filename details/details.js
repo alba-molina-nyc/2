@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dimBackground = document.createElement('div');
   dimBackground.classList.add('dim-background');
   document.body.appendChild(dimBackground);
+  initializeReplyButtons();
 
   // Toggle mobile navigation
   toggleButton.addEventListener('click', function () {
@@ -206,4 +207,4 @@ function updateVotes(commentId, delta) {
   }
 }
 
-
+// TODO: reply comment come out when hit "reply"
